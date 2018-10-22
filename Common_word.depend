@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1540239515 source:/root/Desktop/Common_word/main.cpp
+	<iostream>
+	<vector>
+	<fstream>
+	<string>
+	<queue>
+	<cmath>
+	<chrono>
+	<ctime>
+	"step.h"
+
+1540233511 /root/Desktop/Common_word/step.h
+	<string>
+
