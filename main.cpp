@@ -53,6 +53,7 @@ int main(int argc, char ** argv)
      return(0);
 }
 
+//Print usage of the program
 void print_usage()
 {
 cout << "Usage: $ ./common_word [mode] [options]" << endl;
@@ -60,6 +61,7 @@ cout << "Example: $ ./common_word -generate 100 20 testFile" << endl;
 cout << "For more info, type: $ ./common_word -help" << endl;
 }
 
+//Print program modes with parameters and short description
 void help()
 {
 cout << "Usage: $ ./common_word [mode] [options]" << endl << endl;

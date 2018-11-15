@@ -4,6 +4,9 @@
 #include <iostream>
 #include "wordlist.h"
 
+//--------<Generator>-----------
+
+//Generate file for test data
 void generate_file(string filename, int word_number, int lenght)
 {
     fstream file;
@@ -20,7 +23,7 @@ void generate_file(string filename, int word_number, int lenght)
 
 }
 
-
+//Generate list of random words for testing purposes
 vector<string> generate_list(int word_number, int lenght)
 {
     vector<string> word_list;
@@ -35,6 +38,7 @@ vector<string> generate_list(int word_number, int lenght)
     return word_list;
 }
 
+//Generate random word
 string generate_word(int lenght)
 {
     static const char alphabet[]  = "01*";
@@ -48,6 +52,9 @@ string generate_word(int lenght)
     return word;
 }
 
+//----------</Generator>---------------
+
+//Read list from a file
 vector<string> read_list(string filename)
 {
     fstream file;
@@ -65,11 +72,10 @@ vector<string> read_list(string filename)
         if(!word.length() == 0)
             word_list.push_back(word);
     }
-
     return word_list;
 }
 
-
+//Compare two words looking for a match at any position
 bool compare_words (string word1, string word2)
 {
   for(int i=0; i<word1.length(); ++i)

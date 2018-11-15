@@ -1,7 +1,7 @@
 #include "bruteforce.h"
 
 
-
+//Find solution using bruteforce alghoritm
 string brute_force(vector<string> word_list, vector<string> all_words, int length)
 {
 
@@ -35,9 +35,9 @@ string brute_force(vector<string> word_list, vector<string> all_words, int lengt
     return result;
 }
 
+//generate every binary word of lenght n
 vector<string> generate_all_words(int n)
 {
-
     queue<string> q;
     vector<string> word_list;
     //generete first word: 000...0

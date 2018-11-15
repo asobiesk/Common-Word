@@ -1,5 +1,6 @@
 #include "tests.h"
 
+//Core of measuring the time spent for the alghoritm in corelation with increasing number of words
 void test_word_number_mode(string filename, int word_number, int lenght)
 {
 vector<long int> sizes;
@@ -20,17 +21,17 @@ for(int i=0; i<9; ++i)
 
     word_number *= 2;
 }
-
 for(int i=0; i<9; ++i)
 {
     double currentq = (times[i] * pow(sizes[4], 1))/(times[4]* pow(sizes[i], 1));
 
     q.push_back(currentq);
-
 }
 print_table(sizes, times, q);
 }
 
+//Currently unused
+/*
 long long int silnia(long int n)
 {
 long long silnia = 1;
@@ -40,7 +41,9 @@ for(int i=n; i>1; --i)
 
 return silnia;
 }
+*/
 
+//Core of measuring the time spent for the alghoritm in corelation with increasing number of characters in a word
 void test_word_lenght_mode(string filename, int word_number, int lenght)
 {
 vector<long int> sizes;
@@ -72,9 +75,11 @@ for(int i=0; i<9; ++i)
 print_table(sizes, times, q);
 }
 
+//Print the table which contains problem size and time corelation
 void print_table(vector<long int> sizes, vector<double> times, vector<double> q)
 {
 
+    cout << " n  		t(n)[s]		    q(n)" << endl;
     for(int i = 0; i<9; ++i)
     {
     cout << sizes[i] << "           " << times[i] << "          " << q[i] << endl;
@@ -82,6 +87,7 @@ void print_table(vector<long int> sizes, vector<double> times, vector<double> q)
 
 }
 
+//Core of generator mode
 void generate_mode(string filename, int word_number, int lenght)
 {
     generate_file(filename, word_number, lenght);
@@ -90,6 +96,7 @@ void generate_mode(string filename, int word_number, int lenght)
      cout << "Elapsed time (s): " << heuristic_result.count() << endl;
 }
 
+//Core of compare mode
 void test_alghoritms(string filename, int lenght)
 {
 
@@ -111,6 +118,7 @@ void test_alghoritms(string filename, int lenght)
 
 }
 
+//Bruteforce alghoritm test
 chrono::duration<double> test_bruteforce(vector<string> word_list, int lenght)
 {
     vector<string> all_words = generate_all_words(lenght);
@@ -122,6 +130,7 @@ chrono::duration<double> test_bruteforce(vector<string> word_list, int lenght)
     return elapsed_seconds;
 }
 
+//Heuristic alghortim test
 chrono::duration<double> test_heuristic(vector<string> word_list, int lenght)
 {
     auto start = chrono::system_clock::now();

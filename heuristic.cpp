@@ -1,5 +1,6 @@
 #include "heuristic.h"
 
+//Core of the heuristic alghoritm
 string alghoritm_core(vector<string> word_list, int lenght)
 {
 
@@ -12,6 +13,7 @@ result = go_through_list(word_list, result, lenght);
 return result;
 }
 
+//First go through list. Function looks for words created with only '*' characters or '*' characters and only one other character
 string first_look(vector<string> word_list, int lenght)
 {
     vector < string >::iterator it = word_list.begin();
@@ -49,6 +51,7 @@ string first_look(vector<string> word_list, int lenght)
     return result;
 }
 
+//Main loop of the alghoritm
 string go_through_list(vector<string> word_list, string word, int lenght)
 {
     vector < string >::iterator it = word_list.begin();
@@ -73,8 +76,7 @@ string go_through_list(vector<string> word_list, string word, int lenght)
             {
                 if((*it)[i] == '*')
                     continue;       //...if it is * in word from list, go next
-
-                //cout << "dodaje step" << endl;
+               
                 Step new_step;      //...if it isn't create Step structure
                 new_step.word = word;
                 new_step.counter = counter;
@@ -88,8 +90,8 @@ string go_through_list(vector<string> word_list, string word, int lenght)
             }
         }
     if(flag) continue;
-    //Step 4 from alghoritm description
-    //cout << "jestesmy w krok 4" << endl;
+    
+    //Step 4 from alghoritm description    
     if(!help_list_front)    //if there is no help list yet
         return "END";   //there is no solution
     if(help_list_front->counter == counter)
@@ -100,13 +102,10 @@ string go_through_list(vector<string> word_list, string word, int lenght)
         //delete help_list_front;
         help_list_front = tmp;
     }
-    word = help_list_front->word;
+    word = help_list_front->word;	//go back to previous decision
     counter = (help_list_front->counter)-1;
     position = help_list_front->position;
     it = word_list.begin() + counter;
-
-
     }
 return word;
-
 }
