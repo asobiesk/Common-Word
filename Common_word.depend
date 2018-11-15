@@ -13,3 +13,17 @@
 1540233511 /root/Desktop/Common_word/step.h
 	<string>
 
+1542300566 source:/root/Desktop/Common_word/Common-Word/main.cpp
+	<iostream>
+	<vector>
+	<fstream>
+	<string>
+	<queue>
+	<cmath>
+	<chrono>
+	<ctime>
+	"step.h"
+
+1540233511 /root/Desktop/Common_word/Common-Word/step.h
+	<string>
+

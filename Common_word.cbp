@@ -32,8 +32,16 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="bruteforce.cpp" />
+		<Unit filename="bruteforce.h" />
+		<Unit filename="heuristic.cpp" />
+		<Unit filename="heuristic.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="step.h" />
+		<Unit filename="tests.cpp" />
+		<Unit filename="tests.h" />
+		<Unit filename="wordlist.cpp" />
+		<Unit filename="wordlist.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
